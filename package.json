@@ -1,0 +1,61 @@
+{
+	"name": "ws-tester",
+	"version": "1.6.0",
+	"private": true,
+	"dependencies": {
+		"@chakra-ui/icons": "^1.1.7",
+		"@chakra-ui/react": "^1.8.6",
+		"@emotion/react": "^11.8.1",
+		"@emotion/styled": "^11.8.1",
+		"@fontsource/aileron": "^4.5.1",
+		"@fontsource/allison": "^4.5.3",
+		"@hookform/resolvers": "^2.8.8",
+		"chakra-react-select": "^3.1.2",
+		"crypto-js": "^4.1.1",
+		"framer-motion": "^6.2.8",
+		"i18next": "^21.6.14",
+		"js-cookie": "^3.0.1",
+		"moment": "^2.29.1",
+		"net": "^1.0.2",
+		"react": "^17.0.2",
+		"react-data-table-component": "^7.4.7",
+		"react-datepicker": "^4.7.0",
+		"react-dom": "^17.0.2",
+		"react-hook-form": "^7.27.1",
+		"react-i18next": "^11.15.6",
+		"react-icons": "^4.3.1",
+		"react-query": "^3.34.16",
+		"react-router-dom": "^6.2.2",
+		"react-scripts": "5.0.0",
+		"react-select": "^5.2.2",
+		"react-table": "^7.7.0",
+		"react-to-print": "^2.14.4",
+		"stompjs": "^2.3.3",
+		"styled-components": "^5.3.3",
+		"yup": "^0.32.11"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject"
+	},
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		]
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	}
+}
