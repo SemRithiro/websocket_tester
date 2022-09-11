@@ -1,10 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
-import { Box, chakra, HStack, FormControl, FormLabel, Input, Button, FormErrorMessage, useToast, VStack } from '@chakra-ui/react';
+import { Box, chakra, HStack, FormControl, FormLabel, Input, Button, FormErrorMessage, VStack } from '@chakra-ui/react';
 import { useForm } from 'react-hook-form';
 
 export default function Home() {
-  const toast = useToast();
+  const [connected, setConnect] = useState(false);
+  const [subcribed, setSubcribe] = useState(false);
+  // const toast = useToast();
   const {
     register,
     handleSubmit,
@@ -17,6 +19,7 @@ export default function Home() {
 
   const onSubmit = async (data) => {
     console.log(data);
+    setConnect(true);
   };
 
   return (
@@ -29,8 +32,8 @@ export default function Home() {
                 URL:
               </FormLabel>
               <Input size="sm" placeholder="websocket url" {...register('wsUrl', { required: 'Websocket is required!' })} />
-              <FormErrorMessage>{errors.wsUrl?.message}</FormErrorMessage>
             </HStack>
+            <FormErrorMessage ml="105px">{errors.wsUrl?.message}</FormErrorMessage>
           </FormControl>
           <FormControl id="username" isInvalid={errors.username}>
             <HStack alignItems="center" justifyContent="center">
@@ -38,8 +41,8 @@ export default function Home() {
                 USERNAME:
               </FormLabel>
               <Input size="sm" placeholder="username" {...register('username', { required: 'Username is required!' })} />
-              <FormErrorMessage>{errors.username?.message}</FormErrorMessage>
             </HStack>
+            <FormErrorMessage ml="105px">{errors.username?.message}</FormErrorMessage>
           </FormControl>
           <FormControl id="password" isInvalid={errors.password}>
             <HStack alignItems="center" justifyContent="center">
@@ -54,13 +57,15 @@ export default function Home() {
               <FormLabel w="125px" m="0">
                 TOPIC:
               </FormLabel>
-              <Input size="sm" placeholder="topic" {...register('topic')} />
-              <FormErrorMessage>{errors.topic?.message}</FormErrorMessage>
+              <Input size="sm" placeholder="topic" {...register('topic', { required: 'Topic is required!' })} />
             </HStack>
+            <FormErrorMessage ml="105px">{errors.topic?.message}</FormErrorMessage>
           </FormControl>
           <HStack align="flex-end">
-            <Button size="sm">Connect</Button>
-            <Button size="sm">Subscribe</Button>
+            <Button type="submit" size="sm">
+              {connected ? 'Connected' : 'Connect'}
+            </Button>
+            <Button size="sm">{subcribed ? 'Subscribed' : 'Subscribe'}</Button>
           </HStack>
         </VStack>
       </chakra.form>

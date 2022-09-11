@@ -6,7 +6,7 @@ import { APP_NAME } from './constants/app';
 import PublicLayout from './layouts/PublicLayout';
 import { AnimatePresence } from 'framer-motion';
 
-import Home from './views/auth/Home';
+import Home from './views/app/Home';
 
 export default function Router() {
   return (
@@ -15,7 +15,6 @@ export default function Router() {
         <Routes>
           <Route path="home" element={<PublicLayout />}>
             <Route index element={<Home />} />
-
             <Route path="*" element={<Navigate to={'/'} />} />
           </Route>
           <Route path="*" element={<Navigate to={'/home'} />} />
